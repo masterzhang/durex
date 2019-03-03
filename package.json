@@ -1,0 +1,51 @@
+{
+  "name": "@gem-mine/durex",
+  "version": "0.1.0-dev",
+  "description": "make react-redux easy",
+  "keywords": [
+    "react-redux",
+    "model",
+    "mirror"
+  ],
+  "author": {
+    "email": "caolvchong@gmail.com",
+    "name": "洪军钊"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel ./src --out-dir ./lib",
+    "lint": "eslint --ext .js src",
+    "prepublish": "npm run build"
+  },
+  "files": [
+    "lib"
+  ],
+  "dependencies": {
+    "react-redux": "^5.0.6",
+    "redux": "^4",
+    "zero-immutable": "^0.1.1"
+  },
+  "peerDependencies": {
+    "react": ">=15",
+    "react-dom": ">=15"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.1.2",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^4.14.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-config-standard-react": "^5.0.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^7.5.1",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}
