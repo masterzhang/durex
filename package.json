@@ -1,6 +1,6 @@
 {
   "name": "@gem-mine/durex",
-  "version": "0.1.0-dev",
+  "version": "1.0.1-dev",
   "description": "make react-redux easy",
   "keywords": [
     "react-redux",
@@ -21,8 +21,8 @@
     "lib"
   ],
   "dependencies": {
-    "react-redux": "^5.0.6",
-    "redux": "^4",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1",
     "zero-immutable": "^0.1.1"
   },
   "peerDependencies": {
