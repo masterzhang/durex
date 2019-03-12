@@ -4,10 +4,6 @@ export const options = {
   // global initial state
   // state: undefined,
 
-  // Should be one of ['browser', 'hash', 'memory']
-  // Learn more: https://github.com/ReactTraining/history/blob/master/README.md
-  historyMode: 'hash',
-
   // A list of the standard Redux middleware
   middlewares: [],
 
@@ -24,15 +20,10 @@ export const options = {
   addEffect: addEffect(effects)
 }
 
-const historyModes = ['browser', 'hash', 'memory']
 const isObject = target => Object.prototype.toString.call(target) === '[object Object]'
 
 export default function defaults(opts = {}) {
-  const { historyMode, middlewares, reducers, addEffect } = opts
-
-  if (historyMode && !historyModes.includes(historyMode)) {
-    throw new Error(`historyMode "${historyMode}" is invalid, must be one of ${historyModes.join(', ')}!`)
-  }
+  const { middlewares, reducers, addEffect } = opts
 
   if (middlewares && !Array.isArray(middlewares)) {
     throw new Error(`middlewares "${middlewares}" is invalid, must be an Array!`)
