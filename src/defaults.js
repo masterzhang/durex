@@ -42,7 +42,16 @@ export default function defaults(opts = {}) {
     }
   }
 
+  console.log('===>2', reducers)
+
   Object.keys(opts).forEach(key => {
-    options[key] = opts[key]
+    if (key === 'reducers') {
+      options[key] = {
+        ...options[key],
+        ...opts[key]
+      }
+    } else {
+      options[key] = opts[key]
+    }
   })
 }

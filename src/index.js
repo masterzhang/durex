@@ -6,6 +6,11 @@ import render from './render'
 import hook from './hook'
 import defaults from './defaults'
 import { store } from './middleware'
+import Router from './router'
+import { Route, Redirect, Switch, Prompt, withRouter } from 'react-router'
+import { Link, NavLink } from 'react-router-dom'
+import { urlFor, router, Routes } from './routerHelper'
+import queryString from 'query-string'
 
 const getState = function () {
   return store.getState()
@@ -19,7 +24,21 @@ export default {
   connect,
   smart,
   render,
-  getState
+  getState,
+
+  urlFor,
+  router,
+  Routes,
+
+  Router,
+  Route,
+  Link,
+  NavLink,
+  Switch,
+  Redirect,
+  Prompt,
+  withRouter,
+  queryString
 }
 
-export { model, actions, hook, defaults, connect, smart, render, getState }
+export { model, actions, hook, defaults, connect, smart, render, getState, Router, Route, Link, NavLink, Switch, Redirect, Prompt, withRouter, urlFor, router, Routes, queryString }

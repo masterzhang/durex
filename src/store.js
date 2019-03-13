@@ -1,11 +1,12 @@
 import { createStore as _createStore, applyMiddleware, combineReducers, compose } from 'redux'
 
 import createMiddleware from './middleware'
+import { routerMiddleware, createRouterReducer } from './router'
 
 export let store
 
 export function createStore(models, reducers, initialState, middlewares = []) {
-  const middleware = applyMiddleware(...middlewares, createMiddleware())
+  const middleware = applyMiddleware(routerMiddleware(), ...middlewares, createMiddleware())
 
   const enhancers = [middleware]
 
@@ -39,6 +40,7 @@ function createReducer(models, reducers) {
 
   return combineReducers({
     ...reducers,
-    ...modelReducers
+    ...modelReducers,
+    router: createRouterReducer()
   })
 }
