@@ -1,26 +1,36 @@
 import React from 'react'
 import { createBrowserHistory, createHashHistory, createMemoryHistory } from 'history'
 import { ConnectedRouter, routerActions, CALL_HISTORY_METHOD, connectRouter } from 'connected-react-router'
-import { dispatch } from './middleware'
-import { actions } from './actions'
+import { dispatch } from '../middleware'
+import { actions } from '../actions'
+import { options } from '../defaults'
 
-let history = createHistory({ type: 'hash' })
+let history = null
 
-export function createHistory({ type = 'hash', ...opts }) {
-  const historyModes = {
-    browser: createBrowserHistory,
-    hash: createHashHistory,
-    memory: createMemoryHistory
+function _createHistory(opts) {
+  if (!history) {
+    let type = options.historyMode
+    if (['hash', 'memory', 'browser'].indexOf(type) === -1) {
+      console.error('hashType should be one of hash/memory/browser')
+    } else {
+      const historyModes = {
+        browser: createBrowserHistory,
+        hash: createHashHistory,
+        memory: createMemoryHistory
+      }
+      history = historyModes[type](opts)
+      return history
+    }
   }
-  history = historyModes[type](opts)
-  return history
 }
 
 export function createRouterReducer() {
+  _createHistory()
   return connectRouter(history)
 }
 
 export function routerMiddleware() {
+  _createHistory()
   return () => next => action => {
     if (action.type !== CALL_HISTORY_METHOD) {
       return next(action)
@@ -34,6 +44,7 @@ export function routerMiddleware() {
 }
 
 export default function Router({ children }) {
+  _createHistory()
   // Add `push`, `replace`, `go`, `goForward` and `goBack` methods to actions.routing,
   // when called, will dispatch the crresponding action provided by react-router-redux.
   actions.routing = Object.keys(routerActions).reduce((memo, action) => {

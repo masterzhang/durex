@@ -4,6 +4,10 @@ export const options = {
   // global initial state
   // state: undefined,
 
+  // Should be one of ['browser', 'hash', 'memory']
+  // Learn more: https://github.com/ReactTraining/history/blob/master/README.md
+  historyMode: 'hash',
+
   // A list of the standard Redux middleware
   middlewares: [],
 
@@ -41,8 +45,6 @@ export default function defaults(opts = {}) {
       opts.addEffect = opts.addEffect(effects)
     }
   }
-
-  console.log('===>2', reducers)
 
   Object.keys(opts).forEach(key => {
     if (key === 'reducers') {

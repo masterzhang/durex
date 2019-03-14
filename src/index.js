@@ -9,7 +9,7 @@ import { store } from './middleware'
 import Router from './router'
 import { Route, Redirect, Switch, Prompt, withRouter } from 'react-router'
 import { Link, NavLink } from 'react-router-dom'
-import { urlFor, router, Routes } from './routerHelper'
+import { urlFor, router, Routes } from './router/helper'
 import queryString from 'query-string'
 
 const getState = function () {

@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Switch, Redirect } from 'react-router'
 import pathToRegexp from 'path-to-regexp'
 import queryString from 'query-string'
-import smart from './connect'
+import smart from '../connect'
 
 const ROOT = '__root__'
 
