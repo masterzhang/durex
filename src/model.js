@@ -1,5 +1,5 @@
 import { resolveReducers, addActions } from './actions'
-import { setIn } from 'zero-immutable'
+import { setIn } from '@gem-mine/immutable'
 
 export const models = []
 

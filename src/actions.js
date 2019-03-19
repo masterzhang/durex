@@ -1,6 +1,6 @@
 import { dispatch, getState } from './middleware'
 import { options } from './defaults'
-import { setIn } from 'zero-immutable'
+import { setIn } from '@gem-mine/immutable'
 
 const SEP = '/'
 
