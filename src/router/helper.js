@@ -24,6 +24,9 @@ const _config = {
   }
 }
 
+// 缓存，key 是路径，用来检测该路径是否被注册，如果重复注册，用来警告
+const _cache = {}
+
 function parseRedirect(route) {
   let to = route.redirect
   // 有子路由的不处理 redirect，防止是跳转进入子路由引起死循环
@@ -111,6 +114,14 @@ function add(parent, items) {
     // 具有子模块
     if (item.module) {
       add(item, item.module)
+    }
+
+    if (_cache[item.path]) {
+      console.warn(`${item.path} 已经被注册，生效的是首个注册的组件：`, _cache[item.path], `当前组件不生效：`, item)
+    } else {
+      if (item.component && !item.index) {
+        _cache[item.path] = item
+      }
     }
   })
 }
