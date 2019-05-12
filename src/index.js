@@ -4,7 +4,7 @@ import smart from './connect'
 import { actions } from './actions'
 import render from './render'
 import hook from './hook'
-import defaults from './defaults'
+import defaults, { options } from './defaults'
 import { store } from './middleware'
 
 const getState = function () {
@@ -18,6 +18,7 @@ export default {
   actions,
   hook,
   defaults,
+  options,
   connect,
   smart,
   render,
@@ -25,4 +26,4 @@ export default {
   dispatch
 }
 
-export { model, actions, hook, defaults, connect, smart, render, getState, dispatch }
+export { model, actions, hook, defaults, options, connect, smart, render, getState, dispatch }
