@@ -26,6 +26,14 @@ export const options = {
 
 const isObject = target => Object.prototype.toString.call(target) === '[object Object]'
 
+export function addReducer(reducer) {
+  Object.assign(options.reducers, reducer)
+}
+
+export function addMiddleware(middleware) {
+  options.middlewares.push(middleware)
+}
+
 export default function defaults(opts = {}) {
   const { middlewares, reducers, addEffect } = opts
 
