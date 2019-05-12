@@ -11,8 +11,6 @@ const getState = function () {
   return store.getState()
 }
 
-const dispatch = store.dispatch
-
 export default {
   model,
   actions,
@@ -24,8 +22,7 @@ export default {
   connect,
   smart,
   render,
-  getState,
-  dispatch
+  getState
 }
 
-export { model, actions, hook, defaults, options, addMiddleware, addReducer, connect, smart, render, getState, dispatch }
+export { model, actions, hook, defaults, options, addMiddleware, addReducer, connect, smart, render, getState }

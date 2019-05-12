@@ -41,7 +41,7 @@ export function addActions(modelName, reducers = {}, effects = {}) {
     // 放入 全局的 effects 缓存 dispatch(action) 时过中间件，会检查 全局 effects 中是否存在，如果存在，则执行
     options.addEffect(`${modelName}${SEP}${effectName}`, effects[effectName].bind(scope))
 
-    // Effect is like normal action, except it is handled by mirror middleware
+    // Effect is like normal action, except it is handled by durex middleware
     actions[modelName][effectName] = actionCreator(modelName, effectName)
   })
 }

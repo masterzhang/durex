@@ -3,8 +3,8 @@ import { hooks } from './hook'
 
 function warning() {
   throw new Error(
-    'You are calling "dispatch" or "getState" without applying mirrorMiddleware! ' +
-      'Please create your store with mirrorMiddleware first!'
+    'You are calling "dispatch" or "getState" without applying middleware! ' +
+      'Please create your store with middleware first!'
   )
 }
 
