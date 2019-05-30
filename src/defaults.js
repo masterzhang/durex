@@ -60,6 +60,8 @@ export default function defaults(opts = {}) {
         ...options[key],
         ...opts[key]
       }
+    } else if (key === 'middlewares') {
+      options[key] = options[key].concat(opts[key])
     } else {
       options[key] = opts[key]
     }
