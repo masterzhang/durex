@@ -516,6 +516,7 @@ effects 中可以通过第二个参数 getState 进行获取。
 
 @gem-mine/durex 1.x 版本还未将路由剥离，2.x 版本将路由剥离到了 @gem-mine/durex-router，在需要路由的项目直接 import @gem-mine/durex-router 后即可使用。这里的版本历史从 2.x 版本开始：
 
+- 2.0.5：clean：清理发布到 npm 的无用文件
 - 2.0.4：enhance：为每个 model 内置 resetState action，用于快速重置对应 model 的 state
 - 2.0.3：fixbug：middleware 在 defaults 之前注册导致被覆盖的问题
 - 2.0.2：depricate：此版本废弃，添加的 dispatch API 后续被废弃

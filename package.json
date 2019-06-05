@@ -1,6 +1,6 @@
 {
   "name": "@gem-mine/durex",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "make react-redux easy",
   "keywords": [
     "redux",
