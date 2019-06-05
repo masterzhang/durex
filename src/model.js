@@ -12,6 +12,10 @@ export default function model(m) {
   m.reducers.setField = function (data, getState) {
     return setIn(this.getState(), data)
   }
+  // 为所有 model 的 reducer 注入 resetState 方法，这样 可以使用 actions[name].resetState
+  m.reducers.resetState = function () {
+    return setIn(this.getState(), m.state)
+  }
 
   const reducer = getReducer(resolveReducers(m.name, m.reducers), m.state)
 
