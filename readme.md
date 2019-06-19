@@ -488,7 +488,7 @@ effects 中可以通过第二个参数 getState 进行获取。
 
 ### 如何选择使用 reducers 还是 effects？
 
-首先，reducers 存在感很低，大概率情况下不会存在。即便存在，也大部分会被 setField 这个方法通用取代。
+首先，reducers 存在感偏低，而且如果只是简单的设置 model 的值可以用 setField 这个方法通用取代，当然如果存在较多 reducer 或者包含了一定的逻辑，还是推荐在 reducers 中统一声明。
 
 在处理异步或者其他有副作用时请采用 effects，因此项目中的网络请求都放在 effects 中。
 
@@ -516,6 +516,7 @@ effects 中可以通过第二个参数 getState 进行获取。
 
 @gem-mine/durex 1.x 版本还未将路由剥离，2.x 版本将路由剥离到了 @gem-mine/durex-router，在需要路由的项目直接 import @gem-mine/durex-router 后即可使用。这里的版本历史从 2.x 版本开始：
 
+- 2.0.6：refactor：剥离 durex-router 配置
 - 2.0.5：clean：清理发布到 npm 的无用文件
 - 2.0.4：enhance：为每个 model 内置 resetState action，用于快速重置对应 model 的 state
 - 2.0.3：fixbug：middleware 在 defaults 之前注册导致被覆盖的问题
