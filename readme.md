@@ -344,17 +344,12 @@ render([Component], [container], [callback])
 import durex from '@gem-mine/durex'
 
 durex.defaults({
-  // 路由模式，默认 hash，可选 browser，采用 history 模式，需要服务端支持
-  // 该参数需要引入 @gem-mine/durex-router 插件后才会生效
-  historyMode: 'hash',
   // 额外定义的 reducer，很少使用
   reducers: {},
   // 额外添加的中间件，很少使用
   middlewares: []
 })
 ```
-
-一般使用到 defaults 的情况是你需要修改路由模式，此时需要先安装 @gem-mine/durex-router，具体使用请参考 @gem-mine/durex-router 文档。
 
 ### getState 获取全局 store
 
