@@ -23,7 +23,7 @@
   ],
   "dependencies": {
     "@gem-mine/immutable": "^1.0.0",
-    "react-redux": "^6.0.1",
+    "react-redux": "^7.1.1",
     "redux": "^4.0.1"
   },
   "peerDependencies": {
